@@ -1,25 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    <div class="nav">
+    <!-- slide bar -->
+    <div class="menu">
+        <div class="side-bar-close-button"><button onclick="closeSideBar();" class="close-button">&#10005; Close</button></div>
+
+
+
+        <div>
+            <ul>
+                <li>Home</li>
+                <li>Best Seller</li>
+                <li>Fiction</li>
+                <li>Non-Fiction</li>
+                <li>Book Series</li>
+                <li>Kids Collection</li>
+                <li>Islamic Books</li>
+                <li>Request a Book</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-title">
+        <div class="delivery-date">
+            <p>Order's Delivery Time: 7-9 Working Days!
+            </p>
+        </div>
+
+        <div class="contact">
+            <div class="social-icons"><img src="images/instagram.png" alt="">
+                <img src="images/facebook.png" alt="">
+            </div>
+
+            <span>Call: 0349 8305067 ,
+                E-mail: info@bookeve.pk</span>
+        </div>
+    </div>
+
+    <div class="page-info">
+        <div onclick="openSideBar();" class="side-bar-menu">
+            <button>&#9776; Menu</button>
+
+        </div>
         <div class="brand-info">
-                    <img class="logo-image" src="images/logo-image.webp" alt="">
+            <img class="logo-image" src="images/logo-image.webp" alt="">
 
             <!-- <p class="logo-name">BookEve</p> -->
         </div>
-        <div class="search-bar"><input type="text" placeholder="Search a Book" name="bookSearch" id="bookSearch">
-</div>
-<div class="user">
 
-    <img src="" alt="">
-</div>
+        <div class="search-bar"><input type="text" placeholder="Search by title ,author, keyword" name="bookSearch"
+                id="bookSearch">
+        </div>
+        <div class="page-icon">
+            <div class="user-account">
+                <img src="images/icons8-user-50.png" alt="">
+
+            </div>
+            <div class="add-to-cart">
+                <div class="cart-image"> <img src="images/icons8-cart-50.png" alt="">
+                </div>
+                <div class="cart-quantity">
+                    <p>3</p>
+                </div>
+            </div>
+        </div>
 
     </div>
+
+    </div>
+    <div class="nav">
+            <hr>
+
+        <ul class="nav-list">
+            <li>Home</li>
+            <li>Best Seller</li>
+            <li>Fiction</li>
+            <li>Non-Fiction</li>
+            <li>Book Series</li>
+            <li>Kids Collection</li>
+            <li>Islamic Books</li>
+            <li>Request a Book</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+
+        </ul>
+
+    </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="images/slider1.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/slider2.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/slider3.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/slider4.webp" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <h3>New Arrivals</h3>
+
+<div class="products">
+<div class="product-card"></div>
+</div>
+
+    <script>
+        function openSideBar() {
+
+            document.querySelector(".menu").style.display = "block";
+        }
+        function closeSideBar() {
+            document.querySelector(".menu").style.display = "";
+
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
