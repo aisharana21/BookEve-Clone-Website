@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    align-items: center;
+    background: rgb(229, 174, 71);
+}
+.brand-info{
+margin-left: 5px;
+    display: flex;
+    width: 20%;
+    background: magenta;
+}
+
+.logo-image{
+    width: 200px;
+    height: auto;
+}
+.search-bar{
+   width: 50%;
+display: flex;
+background-color: blueviolet;
+justify-content: center;
+}
+.search-bar input{
+    border: 1px solid rgb(185, 183, 178);
+    border-radius: 15px;
+    width: 500px;
+    height: 40px;
+    /* max-width: 200px; */
+}
+.search-bar input:focus{
+outline: none;
+  box-shadow: 0 0 5px rgba(194, 148, 63, 0.5); /* subtle glow */
+
+}
+@media (max-width: 768px){
+    .nav{
+        width: 100%;
+        gap: 10px;
+    }
+    .brand-info{
+        width:auto;
+    }
+    .search-bar{
+        width: auto;
+    }
+.search-bar input{
+    width: 200px;
+}
+}
+.search-bar input::placeholder {
+  color: gray;
+  font-size: 14px;
+  opacity: 0.8;
+}
