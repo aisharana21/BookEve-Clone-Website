@@ -211,7 +211,12 @@ gap: 5px;
 }
 
 
-
+.products-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+}
 
 @media (max-width: 768px) {
     .page-info {
@@ -352,6 +357,83 @@ gap: 5px;
 }
 
 .product-name {
-  height: 40px;
+  height: 60px;
   margin-bottom: 5px;
+}
+.product-quantity-container{
+    margin: 5px;
+}
+.add-to-cart-button{
+    border: none;
+    background-color: #EF8E36;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 40px;
+    color: white;
+    font-size: 12px;
+}
+.add-to-cart-button:hover{
+    background-color: #e8b381;
+}
+.footer-container{
+    background-color: #EF8E36;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+}
+.contact-footer{
+    display: flex;
+    gap: 20px;
+    height: 250px;
+    background-color: black;
+    justify-content: center;
+}
+.message-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.email-input{
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    /* height: 50px; */
+    justify-content: center;
+align-items: center;
+}
+.email{
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid gray;
+}
+.subscribe-button{
+    background-color:#EF8E36;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 40px;
+}
+@media (max-width: 575px) {
+  .contact-footer{
+    flex-wrap: wrap;
+    height: 200px;
+   gap: 0;
+
+  }
+  .message-heading{
+    height: 30px;
+    
+  }
+.email-input{
+    height: 100px;
+}
+}
+.footer-main{
+margin-top: 10px;
+background-color: black;
+display: grid;
+grid-template-columns: repeat(4,1fr);
 }
