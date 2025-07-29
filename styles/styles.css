@@ -308,54 +308,6 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
-/* @media is used to create responsive design (making the
-   website look good on any screen size). This @media
-   means when the screen width is 2000px or less, we
-   will divide the grid into 7 columns instead of 8. */
-@media (max-width: 2000px) {
-  .products-grid {
-    grid-template-columns: repeat(7, 1fr);
-  }
-}
-
-/* This @media means when the screen width is 1600px or
-   less, we will divide the grid into 6 columns. */
-@media (max-width: 1600px) {
-  .products-grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
-@media (max-width: 1300px) {
-  .products-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-@media (max-width: 1000px) {
-  .products-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 800px) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-@media (max-width: 575px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 450px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .products-heading {
   border-bottom: 1px solid rgb(223, 218, 218);
@@ -453,6 +405,8 @@
   padding: 10px 20px;
   background-color: transparent;
   border: 1px solid gray;
+    color: white;
+
 }
 
 .subscribe-button {
@@ -527,7 +481,64 @@
 }
 
 @media (max-width: 575px) {
-  .contact-footer {
+  
+
+}
+
+.footer-menu {
+  position: fixed;
+  bottom: 0;
+  /* stick to bottom */
+  left: 0;
+  /* align with left edge */
+  width: 100%;
+  /* stretch across page */
+  border: 1px solid black;
+  background-color: firebrick;
+  color: white;
+  text-align: center;
+  /* optional: center text/button */
+  padding: 10px;
+  /* optional: some space inside */
+  z-index: 1000;
+  /* ensure it stays above other elements */
+}
+
+/* @media is used to create responsive design (making the
+   website look good on any screen size). This @media
+   means when the screen width is 2000px or less, we
+   will divide the grid into 7 columns instead of 8. */
+@media (max-width: 2000px) {
+  .products-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* This @media means when the screen width is 1600px or
+   less, we will divide the grid into 6 columns. */
+@media (max-width: 1600px) {
+  .products-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 1300px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+   .contact-footer {
     flex-wrap: wrap;
     height: 200px;
     gap: 0;
@@ -554,26 +565,23 @@
   }
 
   .about-us-description {
-    width: 300px;
+    width: 100%;
+  }
+  .bookeve-image img{
+    width: 350px;
   }
 
 }
 
-.footer-menu {
-  position: fixed;
-  bottom: 0;
-  /* stick to bottom */
-  left: 0;
-  /* align with left edge */
-  width: 100%;
-  /* stretch across page */
-  border: 1px solid black;
-  background-color: firebrick;
-  color: white;
-  text-align: center;
-  /* optional: center text/button */
-  padding: 10px;
-  /* optional: some space inside */
-  z-index: 1000;
-  /* ensure it stays above other elements */
+@media (max-width: 575px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+}
+
+@media (max-width: 450px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
