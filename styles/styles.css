@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+
 body, html {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body, html {
 }
 a{
   text-decoration: none;
-  color: white;
+  color: black;
 }
 .header-title {
   background-color: #EF8E36;
@@ -186,26 +187,31 @@ a{
   flex-wrap: wrap;
   padding: 10px;
 }
-
-.nav-list li {
+.nav-list{
+  list-style: none;
+}
+.nav-list li a {
   text-align: center;
   list-style-type: none;
-
+cursor: pointer;
   padding: 10px;
 
+
 }
 
-.nav-list :first-child {
+
+.nav-list :first-child a {
   background-color: #facabdec;
   color: #EF8E36;
   border-radius: 25px;
 }
 
-.nav-list li:hover {
+.nav-list li :hover  {
   background-color: #facabdec;
   color: #EF8E36;
   border-radius: 25px;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: color 0.3s ease;
+  /* background-color 0.3s ease; */
 
 
 }
@@ -436,24 +442,7 @@ a{
   transition: color 0.3s ease;
 
 }
-.footer-menu {
-  position: fixed;
-  bottom: 0;
-  /* stick to bottom */
-  left: 0;
-  /* align with left edge */
-  width: 100%;
-  /* stretch across page */
-  border: 1px solid black;
-  background-color: firebrick;
-  color: white;
-  text-align: center;
-  /* optional: center text/button */
-  padding: 10px;
-  /* optional: some space inside */
-  z-index: 1000;
-  /* ensure it stays above other elements */
-}
+
 
 /* @media is used to create responsive design (making the
    website look good on any screen size). This @media
@@ -590,15 +579,12 @@ a{
   .user-account{
     display: none;
   }
-  .add-to-cart{
-    /* width: 100%; */
-  }
+ 
 }
 
 @media (max-width:420px) {
   .page-info{
     width: 100%;
-    /* padding:5px 0 ; */
   }
  .brand-info{
   width: 30%;
@@ -609,18 +595,13 @@ a{
   width: 80px;
  }
  .cart-link{
-  background-color: khaki;
     width: 100px;
 
  }
- .add-to-cart{
 
- }
  .delivery-date{
-
 max-height: 30px;
   font-size: 15px;
-  background-color: aquamarine;
  }
 }
 
