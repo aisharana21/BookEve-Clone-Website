@@ -4,7 +4,7 @@ function renderProducts(){
     let productsHTML="";
 // let productData = document.querySelector(".js-products-grid");
 products.forEach((product)=>{
-    const HTML=` <div class="product-container">
+    const HTML=` <div class="product-container js-product-container-${product.id}">
       <div class="product-image-container">
         <img class="product-image"
           src="${product.image}">
@@ -30,16 +30,28 @@ products.forEach((product)=>{
         </select>
       </div>
       <div class="product-spacer"></div>
-      <button class="add-to-cart-button ">
+      <div class="added-to-cart-text js-added-to-cart-text" ></div>
+      <button class="add-to-cart-button js-add-to-cart-button"
+      data-product-id=${product.id}>
         Add to Cart
       </button>
     </div>`
     productsHTML+=HTML;
-    console.log(productsHTML)
-        console.log(product);
+
 })
 // productData.innerHTML=productsHTML;
-document.querySelector(".js-products-grid").innerHTML=productsHTML
-
+document.querySelector(".js-products-grid").innerHTML=productsHTML;
+document.querySelectorAll(".js-add-to-cart-button")
+.forEach((btn)=>{
+    btn.addEventListener('click' ,()=>{
+        const btnId= btn.dataset.productId;
+        document.querySelector(".js-added-to-cart-text").innerHTML="Added";
+        let container= document.querySelector(`.js-product-container-${btnId}`)
+        console.log(container)
+      container.querySelector(".js-added-to-cart-text").innerHTML="Added";
+        console.log("Added");
+    console.log(btn.dataset.productId)
+    });
+});
 }
 renderProducts();

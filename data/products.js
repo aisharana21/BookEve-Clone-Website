@@ -65,6 +65,18 @@
     name:"Shatter Me by Tehreh Mafi",
     price: 1500
 },
+{
+    id: "20250741-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
+    image: "images/unravelme.jpg",
+    name:"Unravel Me by Tehreh Mafi",
+    price: 1500
+},
+{
+    id: "20250742-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
+    image: "images/agoodgirlguide.jpg",
+    name:"A Good Girl Guide To Murder by Holly Jackson",
+    price: 1500
+}
 
 
 ]

@@ -136,6 +136,9 @@ a{
   gap: 5px;
   border-radius: 30px;
 }
+.added-to-cart-text{
+  height: 40px;
+}
 
 .cart-image {
   background-color: white;
