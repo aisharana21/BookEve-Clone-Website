@@ -30,7 +30,7 @@ products.forEach((product)=>{
         </select>
       </div>
       <div class="product-spacer"></div>
-      <div class="added-to-cart-text js-added-to-cart-text-${product.id}" ></div>
+      <div class="added-to-cart-text js-added-to-cart-text" ></div>
       <button class="add-to-cart-button js-add-to-cart-button}"
       data-product-id=${product.id}>
         Add to Cart
@@ -47,7 +47,7 @@ document.querySelectorAll(".js-add-to-cart-button")
         const btnId= btn.dataset.productId;
         let container= document.querySelector(`.js-product-container-${btnId}`)
         console.log(container)
-      container.querySelector( `.js-added-to-cart-text-${btnId}`).innerHTML="Added";
+      container.querySelector( ".js-added-to-cart-text").innerHTML="Added";
         console.log("Added");
 
     });
