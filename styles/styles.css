@@ -331,7 +331,10 @@ cursor: pointer;
 .add-to-cart-button:hover {
   background-color: #e8b381;
 }
-
+.added-to-cart-text{
+  color: green;
+  font-size: 18px;
+}
 .footer-container {
   background-color: #EF8E36;
   display: flex;

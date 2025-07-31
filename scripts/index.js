@@ -1,10 +1,11 @@
 import { products } from "../data/products.js";
 
-function renderProducts(){
-    let productsHTML="";
-// let productData = document.querySelector(".js-products-grid");
-products.forEach((product)=>{
-    const HTML=` <div class="product-container js-product-container-${product.id}">
+function renderProducts() {
+  let productsHTML = "";
+
+  // let productData = document.querySelector(".js-products-grid");
+  products.forEach((product) => {
+    const HTML = ` <div class="product-container js-product-container-${product.id}">
       <div class="product-image-container">
         <img class="product-image"
           src="${product.image}">
@@ -31,26 +32,58 @@ products.forEach((product)=>{
       </div>
       <div class="product-spacer"></div>
       <div class="added-to-cart-text js-added-to-cart-text" ></div>
-      <button class="add-to-cart-button js-add-to-cart-button}"
-      data-product-id=${product.id}>
+      <button class="add-to-cart-button js-add-to-cart-button"
+      data-product-id="${product.id}">
         Add to Cart
       </button>
     </div>`
-    productsHTML+=HTML;
+    productsHTML += HTML;
 
-})
-// productData.innerHTML=productsHTML;
-document.querySelector(".js-products-grid").innerHTML=productsHTML;
-document.querySelectorAll(".js-add-to-cart-button")
-.forEach((btn)=>{
-    btn.addEventListener('click' ,()=>{
-        const btnId= btn.dataset.productId;
-        let container= document.querySelector(`.js-product-container-${btnId}`)
+  })
+  // productData.innerHTML=productsHTML;
+  document.querySelector(".js-products-grid").innerHTML = productsHTML;
+    let addedMessageTimeoutId;
+
+  document.querySelectorAll(".js-add-to-cart-button")
+    .forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const btnId = btn.dataset.productId;
+        let container = document.querySelector(`.js-product-container-${btnId}`)
         console.log(container)
-      container.querySelector( ".js-added-to-cart-text").innerHTML="Added";
+//  const addedMessage = container.querySelector(".js-added-to-cart-text");
+
+//       // Show the "Added" text
+//       addedMessage.innerHTML = "Added";
+
+//       // If this product already has a timer, clear it
+//       if (addedMessage.setTimeoutId) {
+//         clearTimeout(addedMessage.setTimeoutId);
+//       }
+
+//       // Start a new timer for this product only
+//       addedMessage.setTimeoutId = setTimeout(() => {
+//         addedMessage.innerHTML = "";
+//       }, 2000);
+
+//       console.log("Added to product:", btnId);
+
+        container.querySelector(".js-added-to-cart-text").innerHTML = "Added";
+        // if(addedMessageTimeoutId){
+
+        //   clearTimeout(addedMessageTimeoutId);
+        // }
+    
+    //  const setTimeoutId = 
+     setTimeout(() => {
+          container.querySelector(".js-added-to-cart-text").innerHTML = "";
+        }, 2000);
+        // addedMessageTimeoutId=setTimeoutId;
+        console.log(addedMessageTimeoutId);
         console.log("Added");
 
+      });
     });
-});
 }
+        
+
 renderProducts();
