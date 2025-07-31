@@ -1,6 +1,14 @@
 // import { products } from "../data/products.js";
-
-export const cart = [];
+export const cart = [
+  {
+  productId: "20250733-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
+  quantity:1
+},
+{
+  productId: "20250734-9f3a72c4b8e54d7a91c1f65d4e8b3a2f",
+  quantity:1
+}
+];
 
  export function addToCart(productId) {
     let matchingItem;
@@ -9,7 +17,7 @@ export const cart = [];
         matchingItem = cartItem;
         console.log("matching", matchingItem);
       }
-    })
+    });
     if (matchingItem) {
       matchingItem.quantity += 1;
     }

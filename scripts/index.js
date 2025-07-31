@@ -1,6 +1,5 @@
 import { products } from "../data/products.js";
 import {cart, addToCart} from "../data/cart.js";
-function renderProducts() {
   let productsHTML = "";
 
   // let productData = document.querySelector(".js-products-grid");
@@ -39,7 +38,7 @@ function renderProducts() {
     </div>`
     productsHTML += HTML;
 
-  })
+  });
   //updating cart quantity in header
   function updateCartQuantity() {
     let cartQuantity = 0;
@@ -69,12 +68,6 @@ function renderProducts() {
                 addToCart(productId);
 updateCartQuantity();
         // addToCart(productId);
-
-
-
-
-
-      });
+   });
     });
-}
-renderProducts();
+
