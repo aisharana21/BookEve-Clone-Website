@@ -1,5 +1,5 @@
 import { products } from "../data/products.js";
-
+import { cart } from "./cart.js";
 function renderProducts() {
   let productsHTML = "";
 
@@ -42,48 +42,53 @@ function renderProducts() {
   })
   // productData.innerHTML=productsHTML;
   document.querySelector(".js-products-grid").innerHTML = productsHTML;
-    let addedMessageTimeoutId;
+    // let addedMessageTimeoutId;
 
   document.querySelectorAll(".js-add-to-cart-button")
     .forEach((btn) => {
       btn.addEventListener('click', () => {
-        const btnId = btn.dataset.productId;
-        let container = document.querySelector(`.js-product-container-${btnId}`)
-        console.log(container)
-//  const addedMessage = container.querySelector(".js-added-to-cart-text");
+        const productId = btn.dataset.productId;
+        let matchingItem;
+        let cartQuantity=0;
+cart.forEach((cartItem)=>{
+  if(productId===cartItem.productId){
+    matchingItem=cartItem;
+    console.log("matching",matchingItem);
+  }
+})
+  if(matchingItem){
+    matchingItem.quantity+=1;
+  }
+  else{
+cart.push({
+  productId,
+  quantity:1
+});
+  }
+  console.log(cart);
 
-//       // Show the "Added" text
-//       addedMessage.innerHTML = "Added";
+cart.forEach((cartItem)=>{
+  cartQuantity+=cartItem.quantity;
+  document.querySelector(".cart-quantity").innerHTML=cartQuantity
+})
 
-//       // If this product already has a timer, clear it
-//       if (addedMessage.setTimeoutId) {
-//         clearTimeout(addedMessage.setTimeoutId);
-//       }
 
-//       // Start a new timer for this product only
-//       addedMessage.setTimeoutId = setTimeout(() => {
-//         addedMessage.innerHTML = "";
-//       }, 2000);
+  console.log("cartITEMQuantity",cartQuantity)
 
-//       console.log("Added to product:", btnId);
 
-        container.querySelector(".js-added-to-cart-text").innerHTML = "Added";
-        // if(addedMessageTimeoutId){
+        let container = document.querySelector(`.js-product-container-${productId}`)
 
-        //   clearTimeout(addedMessageTimeoutId);
-        // }
-    
-    //  const setTimeoutId = 
+        container.querySelector(".js-added-to-cart-text").innerHTML = "Added"; 
      setTimeout(() => {
           container.querySelector(".js-added-to-cart-text").innerHTML = "";
         }, 2000);
-        // addedMessageTimeoutId=setTimeoutId;
-        console.log(addedMessageTimeoutId);
-        console.log("Added");
+      // addToCart(productId);
+
+
+
+
 
       });
     });
 }
-        
-
 renderProducts();
