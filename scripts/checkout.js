@@ -30,14 +30,17 @@ cartOrderHTML+=`
          <span>Quantity 1</span>
           </div>
         <div class="edit-cart">
-        <span>Update</span>
-        <span>Delete</span>
+        <span class="update-cart js-update-cart">Update</span>
+        <span class="delete-cart js-delete-cart" data-product-id="${matchingproduct.id}">Delete</span>
        </div>
 
      </div>
     </div>
      </div>`;
     console.log(cartOrderHTML);
+    document.querySelectorAll(".js-delete-cart").forEach( deleteLink => {
+        link.addEventListener
+    });
 });
 
 document.querySelector(".order-summary")

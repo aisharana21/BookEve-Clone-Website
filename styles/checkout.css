@@ -115,7 +115,10 @@
     display: flex;
     align-items: flex-end;
 }
-
+.delete-cart,.update-cart{
+    color: #EF8E36;
+    cursor: pointer;
+}
 @media (max-width: 1024px) {
     .checkout-grid {
         grid-template-columns: repeat(1, 1fr);
