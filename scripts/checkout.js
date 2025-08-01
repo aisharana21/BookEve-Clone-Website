@@ -11,7 +11,6 @@ export function renderCart() {
             }
 
         });
-        // console.log(matchingproduct);
         cartOrderHTML += ` 
 <div class="cart-item-container js-cart-item-container-${matchingproduct.id}">
     <div class="cart-item-detail-grid">
@@ -63,8 +62,6 @@ export function renderCart() {
      </div>
     </div>
      </div>`;
-        // console.log(cartOrderHTML);
-
     });
     const quantity = {};
     document.querySelector(".order-summary").innerHTML
@@ -129,20 +126,17 @@ export function renderCart() {
         });
 
 }
-// console.log("total is ", subTotal);
-
-
 function renderOrder(){
 let subTotal=0;
+const shippingRate=50;
+let orderTotal=0;
 cart.forEach(cartItem=>{
     const cartProduct= getProductId(cartItem.productId);
 console.log(cartProduct);
 subTotal+= cartProduct.price*cartItem.quantity;
-console.log(subTotal);
-
+ orderTotal= subTotal+ shippingRate;
 });
-const shippingRate=50;
-const orderTotal= subTotal+ shippingRate;
+
 const orderHtml=`    <div class="payment-summary">
                     <div class="payment-summary-title">
                         <h4>Order Summary</h4>
@@ -171,9 +165,9 @@ const orderHtml=`    <div class="payment-summary">
                 </div>`
 
 
-document.querySelector(".js-payment-summary-container").innerHTML=orderHtml;
+document.querySelector(".js-payment-summary-container")
+.innerHTML=orderHtml;
 
-        //updating order cost
 
 }
 renderCart();
