@@ -4,12 +4,12 @@ export function addToCart(productId,quantity) {
   let matchingItem;
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
-      matchingItem = cartItem.quantity;
+      matchingItem = cartItem;
       console.log("matching", matchingItem);
     }
   });
   if (matchingItem) {
-    matchingItem.quantity += 1;
+    matchingItem.quantity += quantity;
   }
   else {
     cart.push({

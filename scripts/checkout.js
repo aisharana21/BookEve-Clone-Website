@@ -1,4 +1,4 @@
-import { cart, removeCart, saveToLocalStorage} from "../data/cart.js";
+import { cart, removeCart, saveToLocalStorage } from "../data/cart.js";
 import { products } from "../data/products.js";
 
 export function renderCart() {
@@ -67,59 +67,68 @@ export function renderCart() {
         // console.log(cartOrderHTML);
 
     });
-let quantity;
+    const quantity = {};
     document.querySelector(".order-summary").innerHTML
         = cartOrderHTML;
-        console.log(cartOrderHTML);
-// removing product from Cart
-        document.querySelectorAll(".js-delete-cart")
+    console.log(cartOrderHTML);
+    // removing product from Cart
+    document.querySelectorAll(".js-delete-cart")
         .forEach((deleteLink) => {
             deleteLink.addEventListener('click', () => {
                 const deleteProductId = deleteLink.dataset.productId;
-            
+
                 console.log("delete Id ", deleteProductId);
                 removeCart(deleteProductId);
                 renderCart();
             });
         });
-        //updating cart 
-        document.querySelectorAll(".js-update-cart")
-        .forEach((updateLink)=>{
-            updateLink.addEventListener('click',()=>{
-                const updateProductId= updateLink.dataset.productId;
-                console.log("updated Id", updateProductId);
-                const container= document.querySelector
-                (`.js-cart-item-container-${updateProductId}`);
-                console.log("I'm container ", container);
+    //updating cart 
+    document.querySelectorAll(".js-update-cart")
+        .forEach((updateLink) => {
+            updateLink.addEventListener('click', () => {
+                const updateProductId =
+                    updateLink.dataset.productId;
+                const container = document.querySelector
+                    (`.js-cart-item-container-${updateProductId}`);
                 container.classList.add("show-update-option");
 
             });
         });
-        //updating quantity
-        document.querySelectorAll(".update-quantity-option")
-        .forEach(option=>{
-            option.addEventListener('change',()=>{
-  const updatedQuantityId = option.dataset.productId;
-         quantity=option.value;
-        //  = document.querySelector
-        //   (`.js-update-quantity-option-${updatedQuantityId}`).value;
-          console.log("new quan",quantity);
+    //updating quantity
+    document.querySelectorAll(".update-quantity-option")
+        .forEach(option => {
+            option.addEventListener('input', () => {
+                const updatedQuantityId = option.dataset.productId;
+                quantity[updatedQuantityId] = option.value;
             });
-        
+
         });
-        document.querySelectorAll(".js-save-update-quantity")
-        .forEach((saveLink)=>{
-            saveLink.addEventListener('click',()=>{
-                const saveProductId= saveLink.dataset.productId;
+    document.querySelectorAll(".js-save-update-quantity")
+        .forEach((saveLink) => {
+            saveLink.addEventListener('click', () => {
+                const saveProductId = saveLink.dataset.productId;
                 const container = document.querySelector
-                (`.js-cart-item-container-${saveProductId}`);
+                    (`.js-cart-item-container-${saveProductId}`);
                 console.log("I'm container ", container);
                 container.classList.remove("show-update-option");
-              document.querySelector(`.js-cart-quantity-${saveProductId}`).innerHTML= `Quantity: ${quantity}`;
-                        console.log(cart);
 
+
+                cart.forEach(cartItem => {
+                    if (cartItem.productId === saveProductId)
+                        cartItem.quantity = quantity[saveProductId] || 1;
+                    document.querySelector(`.js-cart-quantity-${saveProductId}`)
+                        .innerHTML = `Quantity: ${quantity[saveProductId] || 1}`;
+
+                })
+
+                saveToLocalStorage();
             });
         });
 
-    }
+
+
+
+
+
+}
 renderCart();
