@@ -1,6 +1,5 @@
 import { cart, removeCart, saveToLocalStorage } from "../data/cart.js";
-import { products } from "../data/products.js";
-
+import { products, getProductId } from "../data/products.js";
 export function renderCart() {
     let cartOrderHTML = "";
 
@@ -80,6 +79,7 @@ export function renderCart() {
                 console.log("delete Id ", deleteProductId);
                 removeCart(deleteProductId);
                 renderCart();
+                renderOrder();
             });
         });
     //updating cart 
@@ -103,6 +103,7 @@ export function renderCart() {
             });
 
         });
+        //saving update
     document.querySelectorAll(".js-save-update-quantity")
         .forEach((saveLink) => {
             saveLink.addEventListener('click', () => {
@@ -122,13 +123,58 @@ export function renderCart() {
                 })
 
                 saveToLocalStorage();
+                renderCart();
+                renderOrder();
             });
         });
 
+}
+// console.log("total is ", subTotal);
 
 
+function renderOrder(){
+let subTotal=0;
+cart.forEach(cartItem=>{
+    const cartProduct= getProductId(cartItem.productId);
+console.log(cartProduct);
+subTotal+= cartProduct.price*cartItem.quantity;
+console.log(subTotal);
+
+});
+const shippingRate=50;
+const orderTotal= subTotal+ shippingRate;
+const orderHtml=`    <div class="payment-summary">
+                    <div class="payment-summary-title">
+                        <h4>Order Summary</h4>
+                    </div>
+
+                    <div class="payment-summary-row">
+                        <div>Sub Total</div>
+                        <div class="payment-summary-money">Rs: ${subTotal}</div>
+                    </div>
+                    <div class="payment-summary-row">
+                        <div>Shipping</div>
+                        <div class="payment-summary-row-money">
+                            Flat rate: <span>Rs ${shippingRate}</span>
+                        </div>
+                    </div>
+                    <div class="payment-summary-row total-row">
+                        <div>Order total</div>
+                        <div class="payment-summary-money">
+                            Rs ${orderTotal}
+                        </div>
+
+                    </div>
+                    <div class="order-button">
+                        <button>Proceed To Checkout</button>
+                    </div>
+                </div>`
 
 
+document.querySelector(".js-payment-summary-container").innerHTML=orderHtml;
+
+        //updating order cost
 
 }
 renderCart();
+renderOrder();
