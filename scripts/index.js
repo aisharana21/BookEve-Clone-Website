@@ -76,10 +76,12 @@ console.log(cart);
   // updating cart quantity in header
 
 function updateCartQuantity() {
-  let cartQuantity = 0;
+  let cartQuantity =0;
 
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
     document.querySelector(".cart-quantity").innerHTML = cartQuantity
   });
+  
 }
+updateCartQuantity();
