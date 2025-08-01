@@ -115,10 +115,22 @@
     display: flex;
     align-items: flex-end;
 }
-.delete-cart,.update-cart{
-    color: #EF8E36;
+.delete-cart,
+.update-cart,
+.save-update-quantity{
+    /* color: #EF8E36; */
     cursor: pointer;
+    color: #112A46;
 }
+.save-update-quantity{
+    display: none;
+} 
+.update-quantity{
+display: none;} 
+.show-update-option .save-update-quantity,
+.show-update-option .update-quantity{
+   display: initial;
+} 
 @media (max-width: 1024px) {
     .checkout-grid {
         grid-template-columns: repeat(1, 1fr);
