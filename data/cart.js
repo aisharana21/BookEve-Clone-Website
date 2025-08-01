@@ -1,10 +1,10 @@
 // import { products } from "../data/products.js";
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
-export function addToCart(productId) {
+export function addToCart(productId,quantity) {
   let matchingItem;
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
-      matchingItem = cartItem;
+      matchingItem = cartItem.quantity;
       console.log("matching", matchingItem);
     }
   });

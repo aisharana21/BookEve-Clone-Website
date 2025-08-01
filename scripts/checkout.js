@@ -28,7 +28,7 @@ export function renderCart() {
      </div>
         <div class="product-quantity">
          <span class="js-cart-quantity-${matchingproduct.id}">
-        Quantity : 1
+        Quantity: ${cartItem.quantity}
          </span>
           </div>
         <div class="edit-cart">
@@ -95,13 +95,15 @@ let quantity;
 
             });
         });
+        //updating quantity
         document.querySelectorAll(".update-quantity-option")
         .forEach(option=>{
             option.addEventListener('change',()=>{
   const updatedQuantityId = option.dataset.productId;
-        quantity = document.querySelector
-          (`.js-update-quantity-option-${updatedQuantityId}`).value;
-          console.log(quantity);
+         quantity=option.value;
+        //  = document.querySelector
+        //   (`.js-update-quantity-option-${updatedQuantityId}`).value;
+          console.log("new quan",quantity);
             });
         
         });
