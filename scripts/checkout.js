@@ -11,8 +11,7 @@ let matchingproduct ;
     }
 
 });
-console.log(matchingproduct);
-
+// console.log(matchingproduct);
 cartOrderHTML+=` 
 <div class="cart-item-container">
     <div class="cart-item-detail-grid">
@@ -37,17 +36,22 @@ cartOrderHTML+=`
      </div>
     </div>
      </div>`;
-    console.log(cartOrderHTML);
-    document.querySelectorAll(".js-delete-cart").forEach( deleteLink => {
-        link.addEventListener
-    });
+    // console.log(cartOrderHTML);
+  
 });
 
+  document.querySelectorAll(".js-delete-cart")
+    .forEach( (deleteLink) => {
+        deleteLink.addEventListener('click',() =>{
+            const productId = deleteLink.dataset.productId;
+            console.log("delete Id ", productId);
+        })
+    });
 document.querySelector(".order-summary")
 .innerHTML=cartOrderHTML;
 
 
-console.log(cart);
+// console.log(cart);/
 
 
                

@@ -50,9 +50,7 @@ import {cart, addToCart} from "../data/cart.js";
     console.log("cartITEMQuantity", cartQuantity)
   }
  
-  // productData.innerHTML=productsHTML;
   document.querySelector(".js-products-grid").innerHTML = productsHTML;
-  // let addedMessageTimeoutId;
 
   document.querySelectorAll(".js-add-to-cart-button")
     .forEach((btn) => {
@@ -67,7 +65,6 @@ import {cart, addToCart} from "../data/cart.js";
         }, 2000);
                 addToCart(productId);
 updateCartQuantity();
-        // addToCart(productId);
    });
     });
 
