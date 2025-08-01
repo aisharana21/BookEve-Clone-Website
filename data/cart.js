@@ -24,3 +24,13 @@ export const cart = JSON.parse(localStorage.getItem('cart')) || [];
 function saveToLocalStorage(){
   localStorage.setItem('cart',JSON.stringify(cart));
 }
+export function removeCart(productId){
+      cart.forEach((cartItem,index)=>{
+                if(cartItem.productId===productId){
+               cart.splice(index,1);
+            console.log(cart);
+                        saveToLocalStorage();
+                }
+            });
+}
+  

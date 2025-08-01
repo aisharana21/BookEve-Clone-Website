@@ -1,7 +1,8 @@
-import { cart } from "../data/cart.js";
+import { cart,removeCart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
-    let cartOrderHTML="";
+export function  renderCart(){
+        let cartOrderHTML="";
 
 cart.forEach((cartItem)=>{
 let matchingproduct ;
@@ -40,18 +41,22 @@ cartOrderHTML+=`
   
 });
 
-  document.querySelectorAll(".js-delete-cart")
-    .forEach( (deleteLink) => {
-        deleteLink.addEventListener('click',() =>{
-            const productId = deleteLink.dataset.productId;
-            console.log("delete Id ", productId);
-        })
-    });
-document.querySelector(".order-summary")
-.innerHTML=cartOrderHTML;
+
 
 
 // console.log(cart);/
+document.querySelector(".order-summary").innerHTML
+ = cartOrderHTML;
 
-
-               
+  // attach delete button listeners AFTER rendering
+  document.querySelectorAll(".js-delete-cart")
+    .forEach((deleteLink) => {
+      deleteLink.addEventListener('click', () => {
+        const productId = deleteLink.dataset.productId;
+        console.log("delete Id ", productId);
+        removeCart(productId);
+        renderCart(); 
+      });
+    });
+}
+               renderCart();
