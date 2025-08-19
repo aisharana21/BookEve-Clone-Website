@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.contact-page-main
+{
+    margin: 40px 30px;
+    padding: 15px 10px;
+box-shadow: 0 4px 10px rgba(63, 60, 60, 0.9);
+}
+/* .contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(180, 106, 106);
+    padding: 15px 20px;
+} */
+.contact-container{
+    /* background-color: rgb(180, 180, 219); */
+    display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 10px;
+
+}
+.contact-info{
+    background-color: #EF8E36;
+        color: white;
+        padding: 10px 15px;
+
+}
+
+.contact-sources{
+    display: flex;
+    gap: 20px;
+    height: 80px;
+    align-items: center;
+margin-bottom: 10px;
+}
+.contact-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+width: 50px;       
+  height: 50px;    
+    border-radius: 50%;
+    flex: 0 0 50px;
+}
+.contact-context {
+  flex: 1;              /* let the text take remaining space */
+  word-break: break-word; /* break long words if needed */
+}
+form{
+    width: 100%;
+    padding: 10px;
+}
+ form input, textarea{
+    display: block;
+    width: 90%;
+    height: 40px;
+    border-radius:5px;
+    margin-bottom: 10px;
+    outline: none;
+    padding: 0 10px;
+      border: 1px solid gray 
+}
+.send-button{
+    background-color: #EF8E36;
+        border-radius:5px;
+        border: none;
+        padding: 10px 20px;
+        width: 94%;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .send-button:hover{
+        background-color: black;
+       transition: background-color 0.4s ease-in-out; 
+    }
+    @media (max-width: 850px) {
+        .contact-container{
+            grid-template-columns: repeat(1,1fr);
+        }
+        form{padding: 5px;
+        }
+          .contact-sources {
+    flex-direction: column;
+    align-items: flex-start;
+    /* gap: 10px; */
+    /* background-color: rebeccapurple; */
+    height: auto;
+  }
+
+    }
+    
+    

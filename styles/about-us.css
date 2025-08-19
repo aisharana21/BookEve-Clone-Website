@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.about-us-main-content{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    margin-bottom: 20px;
+        padding: 15px;
+/* border: 1px solid rgb(70, 27, 27); */
+/* overflow-x: hidden; */
+/* width: 95%; */
+}
+h2{
+    color: #EF8E36;
+    font-family: "Varela Round", sans-serif;
+}
+.content p{
+    color: #777777;
+    font-size: 18px;
+    line-height: 30px;
+    
+}
